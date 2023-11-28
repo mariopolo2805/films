@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "loadSeed:movies": "node ./seeds/movies.seed.js",
+    "loadSeed:characters": "node ./seeds/characters.seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
