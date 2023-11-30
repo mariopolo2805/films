@@ -66,6 +66,7 @@ const deleteMovie = async (request, response, next) => {
   try {
     const { id } = request.params;
     const result = await Movie.findByIdAndDelete(id);
+    console.log('Esta borrando una movie el usuario: ', request.user.email);
     return response.status(200).json(result);
   } catch (error) {
     console.error(error);
@@ -73,7 +74,7 @@ const deleteMovie = async (request, response, next) => {
   }
 };
 
-// ADD Chatracter to Movie
+// ADD Character to Movie
 
 const addCharacterToMovie = async (request, response, next) => {
   try {

@@ -1,3 +1,5 @@
+const { isAuth } = require('../../middlewares/auth');
+
 const {
   getMovies,
   getMovie,
@@ -13,7 +15,7 @@ movieRoutes.get('/', getMovies);
 movieRoutes.get('/:id', getMovie);
 movieRoutes.post('/', postMovie);
 movieRoutes.put('/:id', putMovie);
-movieRoutes.delete('/:id', deleteMovie);
+movieRoutes.delete('/:id', [isAuth], deleteMovie);
 movieRoutes.post('/:id/addCharacter', addCharacterToMovie);
 
 module.exports = movieRoutes;
